@@ -34,7 +34,7 @@ upload: docker
 	docker push $(PROJECT_IMAGE):$(VERSION)
 
 
-update: upload
+update:
 	cd ansible;	ansible-playbook -i hosts.yml --extra-vars="playbook_action=update app_version=$(VERSION)" playbook.yml
 
 
