@@ -7,8 +7,8 @@ from app import __version__
 
 class AppConfig(BaseAppConfig):
     app_version: str = __version__
-    tags: list[str] = ["data"]  # type annotation is requred
-    main_menu: dict[str, str] = {"/data": "data"}  # type annotation is requred
+    tags: list[str] = ["data"]  # type annotation is required
+    main_menu: dict[str, str] = {"/data": "data"}  # type annotation is required
     telegram_bot_help = """
 /first_command - bla bla1
 /second_command - bla bla2

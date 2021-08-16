@@ -7,7 +7,7 @@ from app.services.data_service import DataService
 
 
 class App(BaseApp):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__(AppConfig(), DConfigSettings(), DValueSettings())
         self.db: DB = DB(self.database)
         self.data_service = DataService(self.base_params)

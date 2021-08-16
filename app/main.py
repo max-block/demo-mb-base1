@@ -8,5 +8,8 @@ from app.telegram import Telegram
 
 app = App()
 templates = Templates(app, custom_jinja)
-routers = [AppRouter(data_router.init(app), prefix="/api/data", tag="data"), AppRouter(ui_router.init(app, templates), tag="ui")]
+routers = [
+    AppRouter(data_router.init(app), prefix="/api/data", tag="data"),
+    AppRouter(ui_router.init(app, templates), tag="ui"),
+]
 server = Server(app, Telegram(app), routers, templates).get_server()
