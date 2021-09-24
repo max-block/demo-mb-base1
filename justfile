@@ -1,3 +1,5 @@
+set dotenv-load := false
+
 project_name := `grep APP_NAME .env | cut -d '=' -f 2-`
 version := `python3 setup.py --version | tr '+' '-'`
 pypi_index := `grep PYPI_INDEX .env | cut -d '=' -f2`
@@ -44,7 +46,7 @@ host:
 
 
 dev:
-	uvicorn --reload --port 3000 --log-level warning app.main:server
+	uvicorn --port 3000 --log-level warning app.main:server
 
 
 gunicorn:
