@@ -7,8 +7,5 @@
 - include_tasks: update.yml
   when: playbook_action == "update"
 
-- include_tasks: delete.yml
-  when: playbook_action == "delete"
-
 - include_tasks: test.yml
   when: playbook_action == "test"
