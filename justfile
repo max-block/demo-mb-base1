@@ -46,7 +46,7 @@ host:
 
 
 dev:
-	uvicorn --port 3000 --log-level warning app.main:server
+	uvicorn --reload --port 3000 --log-level warning app.main:server
 
 
 gunicorn:
