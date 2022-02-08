@@ -23,7 +23,7 @@ docker: dist
 	docker tag {{project_name}}:{{version}} {{project_name}}:latest
 
 
-docker-compose: dist
+docker-compose: docker
 	docker compose up --build
 
 
