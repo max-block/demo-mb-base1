@@ -1,4 +1,4 @@
-FROM python:3.10.2 as builder
+FROM python:3.10.4 as builder
 
 ARG PYPI_INDEX=https://pypi.org/simple
 ENV VIRTUAL_ENV=/opt/venv
@@ -11,7 +11,7 @@ COPY dist/app-*.whl /mnt/dist/
 RUN pip install -q /mnt/dist/* && pip check
 
 
-FROM python:3.10.2-slim as app
+FROM python:3.10.4-slim as app
 
 # exposed port is required for docker nginx companion
 EXPOSE 3000
